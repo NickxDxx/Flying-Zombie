@@ -35,7 +35,7 @@ def Logger(name):
 class Server_one_process:
     def __init__(self, job_queue, output_queue):
         self.task = None
-        self.current_functions = ["/add_user", "/small_zombie"]
+        self.current_functions = ["/fuckyou", "/small_zombie"]
         self.loop = asyncio.get_event_loop()
         self.job_queue = job_queue
         self.output_queue = output_queue
