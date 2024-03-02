@@ -187,6 +187,8 @@ class Server_one_process:
                         content_length = int(content_length_match.group(1))
                 if content_length is not None and len(data_buffer) >= content_length:
                     break
+                # In my imagination this is how to handle a single request, and prevent "unecessary" huge requests' data incoming. 
+                # The sokcet will automated closed with a fuck you error when you send over 4000 bytes of data.
                 if len(data_buffer) > 4000:
                     await self.error(f"Over 4000 buffer: {data_buffer}")
                     await self.message_sending(client_socket, 403)
