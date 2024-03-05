@@ -118,11 +118,7 @@ class Server_one_process:
 
     async def route_small_zombie(self, approved_message):
         # message = [call_method, route, headers, body]
-        body = approved_message[3]
-        username = body.get('Username')
-        url = body.get("url")
-        steps = body.get('Functions')
-        proxy_config = body.get('proxy_config')
+       
 
         if self.identifier == 5000:
             self.identifier = 1
